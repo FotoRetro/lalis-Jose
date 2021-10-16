@@ -89,3 +89,13 @@ box-shadow: 2px 2px 4px 1px rgba(0,0,0,.2);
 	font-size:1rem;
 	font-weight: 300;
 }
+
+@media screen and (max-width:580px) {
+	.invitacion_sdf{
+		width:100%;
+	}
+	.simply-section {
+		width:70px;
+		height:70px;
+	}
+}
