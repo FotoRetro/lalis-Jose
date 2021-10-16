@@ -1,0 +1,220 @@
+* {margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body{background-color:#eee/*#f7f7f7*/;}
+hr{
+	transition:all 400ms;
+	display:block;margin-left:auto;margin-right:auto;margin-top:1.3vh;
+	border:0;height:1px; 
+	background-image:linear-gradient(to right, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0.93), rgba(0, 0, 0, .1)); 
+}
+/*================================================Barra Scroll=====================================*/
+body::-webkit-scrollbar {width:14px;background:#f7f7f7;padding:2px;}
+body::-webkit-scrollbar-thumb {border-radius:20px;border:solid 3px #f7f7f7;
+background: linear-gradient(-45deg, rgba(212,234,235,.8) 0%, rgba(254,193,3,.8)0%) transparent;}
+/*================================Logo Camara================================*/
+.logo_red{width:20%;height:71px;z-index:1001;position:fixed;overflow:hidden;margin-left:10px;}
+#logo{width:100%;height:70px;}
+.contenedor_logo{width:100%;height:100%;display:flex;align-items:center;}
+.contenedor_camara{width:40%;height:100%;}
+.contenedor_camara .arriba{border:solid transparent 1px;height:23%;width:100%;}
+.contenedor_camara .arriba .boton{width:10%;height:70%;
+	margin:5% 10%;border:solid 1px #fff;border-bottom:none;border-radius:10px 10px 0 0;
+	animation-name:boton;animation-duration:4s;animation-iteration-count:infinite;backdrop-filter: blur(10px);}
+@keyframes boton{0%{height:70%;margin-top:5%;}25%{height:50%;margin-top:7.7%;}
+75%{height:0%;margin-top:14%;}100%{height:70%;margin-top:5%;}}
+.contenedor_camara .arriba .flash{width:40%;height:80%;border:solid 1px #fff;
+	border-bottom:none;border-radius:10px 10px 0 0;margin:-16% auto;backdrop-filter:blur(10px);
+	display:flex;justify-content:center;align-items: center;}
+.contenedor_camara .arriba .flash .rsa{width:5px;height:5px;background-color:#fff;border-radius:50%;}
+.contenedor_camara .abajo{border:solid 1px #fff;border-radius:10px 10px 5px 5px;height:76%;width:100%;
+	display: flex;justify-content: center;align-items: center;backdrop-filter: blur(10px);}
+.contenedor_camara .abajo .circulo{width:40%;height:85%;border-radius:50%;border:solid 1px #fff;
+	display:flex;justify-content:center;align-items:center;background-color:rgba(0,0,0,.3);}
+.contenedor_camara .abajo .circulo .cir{
+	width:85%;height:85%;border-radius:50%;border:solid 1px #fff;animation-name:lente;
+	animation-duration:4s;animation-iteration-count:infinite;background-color:rgba(0,0,0,.5);}
+@keyframes lente{0%{width:85%;height:85%;}
+	25%{width:55%;height:55%;}50%{width:25%;height:25%;}
+	75%{width:45%;height:45%;}100%{width:85%;height:85%;}}
+.contenedor_letras{width:60%;margin-left:10px;}
+.contenedor-texto .titulo {font-size:1rem;font-weight: normal;color:#fff;text-shadow: 0 0 9px rgba(0,0,0,.9);}
+.contenedor-texto .mascota{font-weight:bold;color:rgb(254,3,64);font-style: normal;text-shadow:0 0 1px #fff;}
+/*================================Header================================*/
+.desenfoque{
+	backdrop-filter:blur(10px);
+	width:100%;height:71px;position:fixed;z-index:999;}
+.menu_bar {display:none;}
+header {width:100%;font-size:14px;}
+.menu-fixed {width:100%;height:31px;padding:5px;position:fixed;z-index:1000;margin-top:40px;
+background: linear-gradient(-45deg, rgba(4, 190, 254,.8) 0%, rgba(68, 129, 235,.8) 80%) transparent;}
+header nav ul {list-style: none;text-align: center;margin-bottom:0em;margin-top:-5px;}
+header nav ul li {display: inline-block;position: relative;}
+header nav ul li a{border-top:3px transparent solid;transition:.5s all;}
+header nav ul li a:hover{text-decoration:none;transition:.2s;border-top:3px solid #fff;border-radius:0 0 5px 5px;
+background: linear-gradient(-45deg, rgb(4, 190, 254) 0%, rgb(68, 129, 235) 80%) transparent;}
+header nav ul li a {color:#fff;margin-top: 0em;padding: 0.5em;font-size: 1.10em;display:block;text-decoration: none;}
+header nav ul li a span {margin-right: 0.625em;}
+header nav ul li:hover .children {display:block;}
+header nav ul li .children {display:none;background:rgba(0, 0, 0, .5);margin-top:0px; position:absolute;width:170%;z-index:10000;border-radius:8px;}
+header nav ul li .children li {display:block;overflow:hidden;border-bottom: 0.0625em solid rgba(255,255,255,.5);text-align: left;}
+header nav ul li .children li a {display: block;}
+header nav ul li .children li a span {float:right;position:relative;top:71px;margin-right:18px;margin-left:0;}
+header nav ul li .caret {position:relative;top:0.1875em;margin-left:0em;margin-right:0.1875em;}
+.activo{text-decoration:none;border-radius:0 0 5px 5px;
+background: linear-gradient(-45deg, rgb(4, 190, 254) 0%, rgb(68, 129, 235) 80%) transparent;}
+/*Responsive======*/
+@media screen and (max-width:580px) {
+	.menu_bar{display:block;width:100%;position:fixed;top:40px;/*background:rgba(0,0,0,.5);*/height:31px;z-index:1000;
+	background: linear-gradient(-45deg, rgb(4, 190, 254) 0%, rgb(68, 129, 235) 80%) transparent;}
+	.menu_bar .bt-menu {display: block;padding:8px;color:#fff;overflow:hidden;font-size:1.3rem;font-weight: bold;text-decoration:none;}
+	.menu_bar p{float:right;margin-right:10px;margin-top:-8px;}
+	.menu_bar span {float:right;font-size:2rem;margin-top:-10px;}
+	header .menu-fixed{width:100%;height:100%;/*background: rgba(0,0,0,.5);*/margin-top:71px;position:fixed;right:100%;z-index:1000;
+		background: linear-gradient(-45deg, rgba(4, 190, 254,.84) 0%, rgba(68, 129, 235,.84) 80%) transparent;}
+	header nav ul li {display: block;border-bottom:1px solid rgba(255,255,255,.5);}
+	header nav ul li .children:hover {display:block;}
+	header nav ul li .children {width:100%;position:relative; border:dotted;}
+	header nav ul li .caret {float: left;}
+	.header{display: none;}
+	.logo_red{width:53%;height:60px;margin-left:0px;margin-top:10px;}
+	#logo{height:50px;}
+	.contenedor_letras{margin-left:0px;}
+	.contenedor-texto .titulo{font-size:.75rem;}}
+/*======================BarraBusqueda=====================*/
+.content-table::-webkit-scrollbar {width:12px;background-color:transparent;}
+.content-table::-webkit-scrollbar-thumb {background:rgba(4, 190, 254,.8);border-radius:20px;border:solid 10px #fff;}
+.head_er_s{width:100%;height:40px;padding:5px;position:fixed;z-index:1000;
+background: linear-gradient(-45deg, rgba(4, 190, 254,.8) 0%, rgba(68, 129, 235,.8) 80%) transparent;}
+#input-search{width:300px;border-radius:20px;height:24px;font-size:14px;text-indent:10px;float:right;
+	border-style:none;}
+.content-search{width:100%;height:100vh;position:fixed;top:70px;left:0;background:rgba(0,0,0,.9);
+	display:none;z-index:10001;}
+.content-table{width:70%;max-height:500px;height:auto;margin:auto;
+	margin-top:0px;border-radius:0 0 0px 30px;padding-left:30px;padding-right:30px;
+	border:solid 1px #f7f7f7;overflow-y:visible;overflow-x:hidden;
+	background: linear-gradient(-45deg, rgba(212,234,68,.99) 0%, rgba(254,193,3,.99) 80%) transparent;}
+.content-table table{width: 100%;}
+tbody tr td a{display: block;padding:10px;color:white;text-decoration: none;}
+tbody tr td a:hover{background: rgba(0,0,0,.7); border-radius:20px;padding-left:20px;transition:.5s all;}
+#table_length, #table_filter, #table_info, #table_paginate{display: none;}
+@media screen and (max-width: 700px){#input-search{width:45%;}}
+@media screen and (max-width: 580px){.content-table{width:100%;margin-left:0px;max-height:600px;border-radius:0 0 0 30px;}}
+/*===================================Ir arriba-Redes sociales============================================*/
+.ir-arriba{display:none;padding:10px;background:rgba(254,193,3,.7);font-size:35px;color:#fff;cursor:pointer;position: fixed;bottom:15px;right:15px;border-radius: 50%;transition: .2s;z-index: 1000;border:1px solid #fff;}
+.ir-arriba:hover {background:rgb(254,193,3);font-size: 37px;scale:1.01;}
+.whatsapp {display:block;padding:10px;background:#4FCE5D;font-size:35px;color:#fff;cursor:pointer;position: fixed;bottom:80px;right:15px;border-radius: 50%;transition: .2s;z-index: 1000;border:1px solid #fff;}
+.whatsapp:hover {font-size: 37px;scale:1.01;}
+.instagram {display:block;padding:10px;background-image:url(s4.jpg);background-size: cover;font-size:35px;color:#fff;cursor:pointer;position: fixed;bottom:145px;right:15px;border-radius: 50%;transition: .2s;z-index: 1000;border:1px solid #fff;}
+.instagram:hover{font-size: 37px;scale:1.01;}
+/*--------------------------------------------*/
+@media screen and (max-width: 700px){
+	.instagram{padding: 15px;font-size: 25px; }
+	.whatsapp{padding: 15px;font-size:25px;}
+	.ir-arriba{padding: 15px;font-size: 25px;background: rgba(0,0,0,.5);}
+    .instagram:hover, .whatsapp:hover, .ir-arriba:hover{font-size: 27px;}}
+@media screen and (max-width: 500px){
+	.instagram{padding: 12px;font-size: 18px;margin-bottom: -35px;}
+	.whatsapp{padding: 12px;font-size: 18px;margin-bottom: -17px;}
+	.ir-arriba{padding: 12px;font-size: 18px;}
+    .instagram:hover, .whatsapp:hover, .ir-arriba:hover{font-size: 20px;}}
+@media screen and (max-width: 412px){
+	.instagram{padding: 11px;font-size: 14px;right: 4px;margin-bottom: -43px;}
+	.whatsapp{padding: 11px;font-size: 14px;right: 4px;margin-bottom: -22px;}
+	.ir-arriba{padding: 11px;font-size: 14px;background: rgba(0,0,0,.5);right: 4px;}
+	.instagram:hover, .whatsapp:hover, .ir-arriba:hover{font-size: 16px;}}
+/*================================================Portada=====================================*/
+.container-portada{width:100%;min-height:100vh;background-size:cover;background-attachment:fixed;}
+
+.inicio{background-image:url(../../_ig/portada/quince.jpg);}
+.quince{background-image:url(../../_ig/portada/quince.jpg);}
+.bodass{background-image:url(../../_ig/portada/boda.jpg);}
+.retratos{background-image:url(../../_ig/portada/quince.jpg);}
+.graduaciones{background-image:url(../../_ig/portada/graduacion.jpg);}
+.retratos{background-image:url(../../_ig/portada/quince.jpg);}
+.Parejas{background-image:url(../../_ig/24.jpg);}
+.bebes{background-image:url(../../_ig/24.jpg);}
+.mascotas{background-image:url(../../_ig/24.jpg);}
+
+
+.container-portada .contenedor-texto{position:relative;z-index:10;float:right;width: 65%;margin-top: 45px;}
+.contenedor-texto img{width:50%;display: block;margin: auto;animation: heading;animation-duration:3s;
+	animation-fill-mode: forwards;}
+@keyframes heading {0%{margin-top: -2000px;}100% {margin-top: 0px;}}
+#content{position: relative;animation-name: content;animation-duration: 3s;animation-fill-mode: forwards;}
+@keyframes content {0%{margin-left: -3000px; margin-top: 2000px;}100% {margin-left: 0;}}
+.contenedor-texto h2{color:#000;font-size:80px;text-align:center;
+text-shadow: 0 0 5px #FFFFFF;}
+.contenedor-texto h3{color:#000;font-size:45px;text-align:center;margin-top: -30px;
+text-shadow: 0 0 3px #FFFFFF;}
+.contenedor-texto p {margin-bottom:40px;line-height:36px;font-size:25px;text-align:center;
+	margin-top:30px;color:rgba(0,0,0,.9);animation: tex 3s;
+text-shadow: 0 0 2px #FFFFFF;}
+@keyframes tex{0%   {opacity: 0;}80%  {opacity: 0;}100% {opacity: 1;}}
+._dfs{display: flex;justify-content: center;animation-name: btn;animation-duration: 4s;animation-delay: 0s;}
+@keyframes btn {0%{margin-top: -2000px; opacity: 0;}80%{opacity: 0;}100%{margin-top: 0; opacity: 1;}}
+.btn-link{display: inline-block;padding:14px 34px;border-radius:50px;margin-right:10px;text-decoration:none;color:#fff;cursor:pointer;
+background: linear-gradient(-45deg, rgba(234,90,68,.7) 0%, rgba(254,3,64,.7) 80%) transparent;}
+.btn-link.inactivo:hover{text-decoration:none;color:#fff;
+background: linear-gradient(-45deg, rgba(234,90,68,1) 0%, rgba(254,3,64,1) 80%) transparent;}
+.btn-link.activo {color: #fff;text-decoration:none;border: 
+1px solid #fff;background: linear-gradient(-45deg, rgba(234,90,68,1) 0%, rgba(254,3,64,1) 80%) transparent;}}
+/*RESPONSIVE----*/
+@media screen and (max-width: 800px){
+  .container-portada.inicio{background-image:url(../_ig/portada/graduacion2.jpg);}
+  .container-portada.graduacion{background-image:url(../_ig/portada/graduacion2.jpg);}
+  .container-portada.graduacion{background-image:url(../_ig/portada/graduacion2.jpg);}
+  .container-portada.graduacion{background-image:url(../_ig/portada/graduacion2.jpg);}
+  .container-portada.graduacion{background-image:url(../_ig/portada/graduacion2.jpg);}
+
+  .container-portada{background-size: cover;}
+  .container-portada .contenedor-texto{width:70%;margin-top:120px;}
+  .contenedor-texto h2 {font-size:50px;}
+  .contenedor-texto img{width: 60%;}
+  .contenedor-texto h3{font-size:37px;}
+  .contenedor-texto p{font-size: 30px;}}
+@media screen and (max-width: 550px){
+  .container-portada .contenedor-texto{width:100%;margin-top:65%;}
+  .contenedor-texto h2 {font-size: 43px;margin-top: 10px;color:#f7f7f7;}
+  .contenedor-texto h3{font-size: 35px;margin-top:-10px;color:#f7f7f7;}
+  .contenedor-texto p{font-size: 26px;margin-top: 20px;color:#f7f7f7;}}
+@media screen and (max-width: 380px){
+  .container-portada .contenedor-texto{margin-top:50%;}
+  .contenedor-texto img{width: 100%;}
+  .contenedor-texto h2 {font-size: 30px;margin-top: 0px;text-shadow: 8px 10px 7px rgba(0, 0, 0, 0.7);}
+  .contenedor-texto h3{font-size: 22px;margin-top:-10px;}
+  .contenedor-texto p{font-size: 15px;margin-top: 8px;}}	
+/*====================Botones=============*/
+.bt_pa{
+	width:80%;
+	height:30px;
+	border-radius:50px;
+	background: linear-gradient(-45deg, rgba(234,90,68,.7) 0%, rgba(254,3,64,.7) 80%) transparent;
+	/*background: linear-gradient(-45deg, rgba(4, 190, 254,.7) 0%, rgba(68, 129, 235,.7) 80%) transparent;*/
+	color:#fff;font-size:22px;
+	text-align:center;
+	text-decoration:none;
+	cursor:pointer;
+	font-family:'Cormorant Garamond', serif;
+	bottom:30px;
+	position:absolute;left:50%;transform:translate(-50%);}
+.bt_pa:hover{background: linear-gradient(-45deg, rgba(4, 190, 254,1) 0%, rgba(68, 129, 235,1) 80%) transparent;}
+.bt_pa span{position:absolute;margin-top:3px;margin-left:10px;transition:.5s all;}
+.bt_pa:hover span{transition:.5s all;margin-left:35px;}
+.bt_pa_2{background: linear-gradient(-45deg, rgba(4, 190, 254,.7) 0%, rgba(68, 129, 235,.7) 80%) transparent;
+display:flex;justify-content:center;margin:10px 15px 10px;padding:10px 15px;border-radius:50px;color: #fff;font-size:22px;text-align:center;text-decoration:none;cursor:pointer;font-family:'Cormorant Garamond', serif;}
+.bt_pa_2:hover{background: linear-gradient(-45deg, rgba(4, 190, 254,1) 0%, rgba(68, 129, 235,1) 80%) transparent;}
+.bt_pa_2 span{margin-left:10px;}
+/*================================================Foother=====================================*/
+.footer section{
+	width:100%;
+	height:50px;
+	bottom:0;
+	position:relative;
+	display:flex;
+	align-items:flex-end;
+}
+.footer section iframe{
+	width:100%;
+	height:70px;
+	margin-bottom:0px;
+	border-style:none;
+}
